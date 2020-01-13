@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<unistd.h>
+#include "libft.h"
 
 void ft_putstr(char const *s)
 {
@@ -19,11 +19,4 @@ void ft_putstr(char const *s)
 		write(1, &*s, 1);
 		s++;
 	}
-}
-
-int main(int argc, char **argv)
-{
-	char string[20] = "kill_me=))";
-	ft_putstr(string);
-	return 0;
 }
