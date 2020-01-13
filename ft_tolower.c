@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/28 10:36:43 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/13 11:56:29 by vrayinch         ###   ########.fr       */
+/*   Created: 2020/01/13 11:48:27 by vrayinch          #+#    #+#             */
+/*   Updated: 2020/01/13 11:56:31 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long int				ft_strlen(char const *str)
+int ft_tolower(int ch)
 {
-	int	len;
-
-	len	=	0;
-
-	while(str[len])
-	{
-		len++;
-	}
-	return(len);
+    ch = ch + 32;
+    return (ch);
 }
+
+
