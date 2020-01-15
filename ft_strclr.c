@@ -1,25 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/28 10:36:43 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/15 11:35:00 by vrayinch         ###   ########.fr       */
+/*   Created: 2020/01/15 11:33:55 by vrayinch          #+#    #+#             */
+/*   Updated: 2020/01/15 11:45:11 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-long long	ft_strlen(char const *str)
+void	ft_strclr(char *s)
 {
-	int	len;
-
-	len = 0;
-	while (str[len])
+	if (s)
 	{
-		len++;
+		while (*s)
+		{
+			*s = '\0';
+			s++;
+		}
 	}
-	return (len);
 }
