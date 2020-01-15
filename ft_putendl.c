@@ -6,19 +6,18 @@
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 11:55:44 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/13 11:55:53 by vrayinch         ###   ########.fr       */
+/*   Updated: 2020/01/15 09:49:10 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include "libft.h"
 
-void    ft_putendl(char const *s)
+void	ft_putendl(char const *s)
 {
-    while(*s != '\0')
+	while (*s != '\0')
 	{
 		write(1, &*s, 1);
 		s++;
 	}
-    write(1, "\n", 1);
+	write(1, "\n", 1);
 }

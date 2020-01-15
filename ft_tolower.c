@@ -6,16 +6,17 @@
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/13 11:48:27 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/13 11:56:31 by vrayinch         ###   ########.fr       */
+/*   Updated: 2020/01/15 10:17:05 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_tolower(int ch)
+int	ft_tolower(int ch)
 {
-    ch = ch + 32;
-    return (ch);
+	if (ch > 64 && ch < 91)
+	{
+		ch = ch + 32;
+	}
+	return (ch);
 }
-
-

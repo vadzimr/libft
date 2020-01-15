@@ -6,21 +6,20 @@
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/28 10:36:43 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/13 11:56:29 by vrayinch         ###   ########.fr       */
+/*   Updated: 2020/01/15 09:50:15 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-long int				ft_strlen(char const *str)
+long int	ft_strlen(char const *str)
 {
 	int	len;
 
-	len	=	0;
-
-	while(str[len])
+	len = 0;
+	while (str[len])
 	{
 		len++;
 	}
-	return(len);
+	return (len);
 }
