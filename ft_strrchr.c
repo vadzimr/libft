@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/16 07:25:28 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/17 15:07:47 by vrayinch         ###   ########.fr       */
+/*   Created: 2020/01/17 13:38:08 by vrayinch          #+#    #+#             */
+/*   Updated: 2020/01/17 14:56:06 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+char	*ft_strrchr(const char *s, int c)
 {
-	int res;
-	int sign;
+	int len;
 
-	res = 0;
-	sign = 1;
-	while (*str && ((*str >= 9 && *str <= 13) || *str == 32))
-		str++;
-	if (*str == '-')
-		sign = -1;
-	if (*str == '-' || *str == '+')
-		str++;
-	while (*str && (*str > 47 && *str < 58))
+	if ((s[0] == '\0' && c == '\0') || s[0] == '\0')
+		return (NULL);
+	len = ft_strlen(s);
+	while (len >= 0)
 	{
-		res = (res * 10) + (*str - 48);
-		str++;
+		if (s[len] == (unsigned char)c)
+			return ((char *)&s[len]);
+		len--;
 	}
-	return (res * sign);
+	return (NULL);
 }
