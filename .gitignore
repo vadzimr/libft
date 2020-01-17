@@ -3,3 +3,4 @@
 Mkfile.old
 *.lib
 *.a
+!*.*

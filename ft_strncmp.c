@@ -6,7 +6,7 @@
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 19:56:12 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/16 20:49:39 by vrayinch         ###   ########.fr       */
+/*   Updated: 2020/01/17 06:39:20 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	if(n == 0)
 	{
-		return((unsigned char)*s1 - (unsigned char)*s2);
+		return (0);
 	}
 	else 
 	{
@@ -28,30 +28,30 @@ int ft_strncmp(const char *s1, const char *s2, size_t n)
 	return((unsigned char)*s1 - (unsigned char)*s2);
 	}
 }
-int main() 
-{  
-    // b has less ASCII value than g 
-    char leftStr[] = "q"; 
-    char rightStr[] = "a"; 
+// int main() 
+// {  
+//     // b has less ASCII value than g 
+//     char leftStr[] = "q"; 
+//     char rightStr[] = "a"; 
 	  
-    int res = strncmp(leftStr, rightStr, 0); 
+//     int res = strncmp(leftStr, rightStr, 0); 
 
-    int res_my = ft_strncmp(leftStr, rightStr, 0); 
+//     int res_my = ft_strncmp(leftStr, rightStr, 0); 
 	  
-    if (res==0) 
-        printf("Strings are equal\n"); 
-    else 
-        printf("Strings are unequal\n"); 
+//     if (res==0) 
+//         printf("Strings are equal\n"); 
+//     else 
+//         printf("Strings are unequal\n"); 
 		  
-    printf("\nValue returned by strncmp() is:  %d\n" , res); 
+//     printf("\nValue returned by strncmp() is:  %d\n" , res); 
 	  
-     if (res_my==0) 
-        printf("Strings are equal\n"); 
-    else 
-        printf("Strings are unequal\n"); 
+//      if (res_my==0) 
+//         printf("Strings are equal\n"); 
+//     else 
+//         printf("Strings are unequal\n"); 
 
-        printf("\nValue returned by ft_strncmp() is:  %d\n" , res_my);
+//         printf("\nValue returned by ft_strncmp() is:  %d\n" , res_my);
 
 
-    return 0; 
-} 
+//     return 0; 
+// } 

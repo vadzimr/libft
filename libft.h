@@ -6,7 +6,7 @@
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/12 16:10:47 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/16 16:27:32 by vrayinch         ###   ########.fr       */
+/*   Updated: 2020/01/17 07:23:36 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int					ft_isdigit(int c);
 int					ft_isprint(int c);
 int					ft_toupper(int ch);
 int					ft_tolower(int ch);
-char				*ft_strstr(char *str, char *to_find);
+char				*ft_strstr(char *s1, char *s2);
 char				*ft_strnstr(const char *str, const char *find, size_t len);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
