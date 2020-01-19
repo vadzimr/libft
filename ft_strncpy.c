@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/16 18:53:04 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/18 16:21:04 by vrayinch         ###   ########.fr       */
+/*   Created: 2020/01/18 19:10:01 by vrayinch          #+#    #+#             */
+/*   Updated: 2020/01/18 19:21:06 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+char    *ft_strncpy(char *dst, const char *src, size_t len)
 {
-	while (*s1 && *s2 && *s1 == *s2)
+    size_t i;
+
+    i = 0;
+	while (src[i] && i < len)
 	{
-        s1++;
-        s2++;
+        dst[i] = src[i];
+        i++;
 	}
-    return((unsigned char)*s1 - (unsigned char)*s2);
+    dst[i+1] = '\0';
+    return (dst);
 }
