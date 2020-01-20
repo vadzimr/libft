@@ -6,7 +6,7 @@
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/12 16:10:47 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/19 18:50:53 by vrayinch         ###   ########.fr       */
+/*   Updated: 2020/01/19 19:28:54 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ typedef struct		s_list
 	size_t			content_size;
 	struct s_list	*next;
 }					t_list;
-
 
 void				*ft_memset(void *b, int c, size_t len);
 void				*ft_memcpy(void *dst, const void *src, size_t len);
@@ -79,7 +78,7 @@ void				ft_putnbr(int n);
 void				ft_putstr(char const *s);
 void				ft_putendl(char const *s);
 char				*ft_strstr(const char *s1, const char *s2);
-char    			*ft_strnstr(const char *s1, const char *s2, size_t len);
+char				*ft_strnstr(const char *s1, const char *s2, size_t len);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 int					ft_strcmp(const char *s1, const char *s2);
@@ -88,7 +87,7 @@ int					ft_strncmp(const char *s1, const char *s2, size_t n);
 char				*ft_strdup(const char *s1);
 char				*ft_strndup(const char *s1, size_t n);
 void				ft_strclr(char *s);
-char    			*ft_stpcpy(char *dst, const char *src);
+char				*ft_stpcpy(char *dst, const char *src);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *dst, const char *src, size_t len);
 char				*ft_stpncpy(char *dst, const char *src, size_t len);

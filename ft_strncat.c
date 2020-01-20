@@ -6,7 +6,7 @@
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/19 16:48:35 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/19 17:04:24 by vrayinch         ###   ########.fr       */
+/*   Updated: 2020/01/19 19:07:18 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,8 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 		*s1 = *s2;
 		s2++;
 		s1++;
-        n--;
+		n--;
 	}
 	*(s1++) = '\0';
 	return (s1_copy);
 }
-
