@@ -6,13 +6,13 @@
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/18 18:18:43 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/18 18:51:03 by vrayinch         ###   ########.fr       */
+/*   Updated: 2020/01/19 16:07:00 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strcpy(char * dst, const char * src)
+char    *ft_strcpy(char *dst, const char *src)
 {
     size_t i;
 
@@ -25,4 +25,3 @@ char    *ft_strcpy(char * dst, const char * src)
     dst[i] = '\0';
     return (dst);
 }
-

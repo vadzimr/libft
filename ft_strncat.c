@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stpncpy.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/18 19:17:24 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/19 16:14:44 by vrayinch         ###   ########.fr       */
+/*   Created: 2020/01/19 16:48:35 by vrayinch          #+#    #+#             */
+/*   Updated: 2020/01/19 17:04:24 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_stpncpy(char *dst, const char *src, size_t len)
+char	*ft_strncat(char *s1, const char *s2, size_t n)
 {
-	size_t i;
+	char *s1_copy;
 
-	i = 0;
-	while (src[i] && i < len)
+	s1_copy = s1;
+	while (*s1)
+		s1++;
+	while (*s2 && n > 0)
 	{
-		dst[i] = src[i];
-		i++;
+		*s1 = *s2;
+		s2++;
+		s1++;
+        n--;
 	}
-	while (i < len)
-		dst[i++] = '\0';
-	return (dst);
+	*(s1++) = '\0';
+	return (s1_copy);
 }
+
