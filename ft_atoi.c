@@ -6,7 +6,7 @@
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 07:25:28 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/17 15:07:47 by vrayinch         ###   ########.fr       */
+/*   Updated: 2020/01/23 16:10:16 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int	ft_atoi(const char *str)
 {
-	int res;
-	int sign;
+	long	res;
+	long	res_overflow;
+	int		sign;
 
 	res = 0;
 	sign = 1;
@@ -27,8 +28,15 @@ int	ft_atoi(const char *str)
 		str++;
 	while (*str && (*str > 47 && *str < 58))
 	{
+		res_overflow = res;
 		res = (res * 10) + (*str - 48);
 		str++;
+		if (res_overflow > res)
+		{
+			if (sign == 1)
+				return (-1);
+			return (0);
+		}
 	}
-	return (res * sign);
+	return ((int)(res * sign));
 }
