@@ -6,7 +6,7 @@
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/12 16:10:47 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/23 18:39:36 by vrayinch         ###   ########.fr       */
+/*   Updated: 2020/01/24 09:48:18 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,12 @@ typedef struct		s_list
 
 void				*ft_memset(void *b, int c, size_t n);
 void				*ft_memcpy(void *dst, const void *src, size_t len);
-void				ft_bzero(void *b, size_t n);
+void				ft_bzero(void *s, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
-void				*ft_memchr(const void *s, int c, size_t n);
+void				*ft_memchr(const void *src, int c, size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t len);
+void				*ft_calloc(size_t count, size_t size);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);

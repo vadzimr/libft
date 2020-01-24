@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/23 18:16:17 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/24 07:31:34 by vrayinch         ###   ########.fr       */
+/*   Created: 2020/01/24 09:32:55 by vrayinch          #+#    #+#             */
+/*   Updated: 2020/01/24 09:45:33 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+void	*ft_calloc(size_t count, size_t size)
 {
-	size_t			i;
-	unsigned char	*ptr;
-
+	unsigned char *ptr;
+	size_t           i;
+	
 	i = 0;
-	ptr = s;
-	if (n > 0)
-		while (i < n)
-			ptr[i++] = 0;
+	if (!(ptr = (unsigned char *)malloc(count * size)))
+		return (NULL);
+	while (i < (count * size))
+		ptr[i++] = 0;
+	return (ptr);
 }
