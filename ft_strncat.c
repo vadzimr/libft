@@ -6,7 +6,7 @@
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/19 16:48:35 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/19 19:07:18 by vrayinch         ###   ########.fr       */
+/*   Updated: 2020/01/24 11:32:44 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,11 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 	s1_copy = s1;
 	while (*s1)
 		s1++;
-	while (*s2 && n > 0)
+	while (*s2 && n--)
 	{
 		*s1 = *s2;
 		s2++;
 		s1++;
-		n--;
 	}
 	*(s1++) = '\0';
 	return (s1_copy);

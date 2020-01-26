@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/23 20:51:49 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/25 21:11:52 by vrayinch         ###   ########.fr       */
+/*   Created: 2020/01/25 20:44:59 by vrayinch          #+#    #+#             */
+/*   Updated: 2020/01/25 20:58:03 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t n)
+void	ft_putnbr_fd(int n, int fd)
 {
-	unsigned char		*dst_copy;
-	unsigned const char	*src_copy;
-	size_t				i;
+	long long	nb;
 
-	if (!dst && !src)
-		return (NULL);
-	dst_copy = dst;
-	src_copy = src;
-	i = 0;
-	if (src_copy < dst_copy)
-		while (n--)
-			dst_copy[n] = src_copy[n];
-	else
-		while (i < n)
+	nb = n;
+	if (nb < 0)
+	{
+		write(fd, "-", 1);
+		nb = nb * -1;
+	}
+	if (nb >= 0)
+	{
+		if (nb > 10)
 		{
-			dst_copy[i] = src_copy[i];
-			i++;
+			ft_putnbr_fd(nb / 10, fd);
+			nb = nb % 10;
 		}
-	return (dst);
+		nb = nb + 48;
+		write(fd, &nb, 1);
+	}
 }

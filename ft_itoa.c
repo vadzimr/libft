@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/23 20:51:49 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/25 21:11:52 by vrayinch         ###   ########.fr       */
+/*   Created: 2020/01/25 19:07:31 by vrayinch          #+#    #+#             */
+/*   Updated: 2020/01/25 20:20:42 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memmove(void *dst, const void *src, size_t n)
+char			*ft_itoa(int n)
 {
-	unsigned char		*dst_copy;
-	unsigned const char	*src_copy;
-	size_t				i;
+	long long	nb;
+	int			i;
+	char		*number_str;
+	int			num_len;
 
-	if (!dst && !src)
+	nb = n;
+	i = 1;
+	num_len = ft_numlen(n);
+	if (!(number_str = malloc((num_len + 1) * sizeof(char))))
 		return (NULL);
-	dst_copy = dst;
-	src_copy = src;
-	i = 0;
-	if (src_copy < dst_copy)
-		while (n--)
-			dst_copy[n] = src_copy[n];
-	else
-		while (i < n)
-		{
-			dst_copy[i] = src_copy[i];
-			i++;
-		}
-	return (dst);
+	number_str[num_len] = '\0';
+	if (nb < 0)
+	{
+		number_str[0] = 45;
+		nb *= -1;
+	}
+	if (n == 0)
+		number_str[0] = '0';
+	while (nb > 0)
+	{
+		number_str[num_len - i++] = (nb % 10) + 48;
+		nb /= 10;
+	}
+	return (number_str);
 }

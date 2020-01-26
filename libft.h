@@ -6,7 +6,7 @@
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/12 16:10:47 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/24 09:48:18 by vrayinch         ###   ########.fr       */
+/*   Updated: 2020/01/24 14:31:38 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ int					ft_isnegative(long long num);
 long long			ft_max(long long *tab, unsigned long len);
 size_t				ft_strlcat(char *dst, const char *src, size_t size);
 char				*ft_strncat(char *s1, const char *s2, size_t n);
-char				*ft_strlcpy(char *dst, const char *src, size_t len);
+size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 int					ft_atoi(const char *s);
 char				*ft_itoa(int n);
 

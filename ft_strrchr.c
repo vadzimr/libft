@@ -6,7 +6,7 @@
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/17 13:38:08 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/18 16:20:57 by vrayinch         ###   ########.fr       */
+/*   Updated: 2020/01/24 10:44:18 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@ char	*ft_strrchr(const char *s, int c)
 {
 	int len;
 
-	if ((s[0] == '\0' && c == '\0') || s[0] == '\0')
-		return (NULL);
 	len = ft_strlen(s);
+	if (s[0] == '\0' && c == '\0')
+		return ((char *)&s[len]);
+	if (s[0] == '\0' || !*s)
+		return (NULL);
 	while (len >= 0)
 	{
-		if (s[len] == (unsigned char)c)
+		if (s[len] == c)
 			return ((char *)&s[len]);
 		len--;
 	}

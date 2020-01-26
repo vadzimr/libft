@@ -6,7 +6,7 @@
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/22 08:00:40 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/23 12:22:47 by vrayinch         ###   ########.fr       */
+/*   Updated: 2020/01/25 20:20:40 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_numlen(long num)
 	if (num < 0)
 	{
 		len++;
-		num += -1;
+		num *= -1;
 	}
 	if (num == 0)
 		return (1);
