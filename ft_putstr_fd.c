@@ -6,7 +6,7 @@
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 20:46:01 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/25 20:48:27 by vrayinch         ###   ########.fr       */
+/*   Updated: 2020/01/26 09:59:42 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	while (*s != '\0')
+	if (s)
 	{
-		write(fd, &*s, 1);
-		s++;
+		while (*s)
+		{
+			write(fd, &*s, 1);
+			s++;
+		}
 	}
 }

@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/13 11:55:44 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/26 09:59:35 by vrayinch         ###   ########.fr       */
+/*   Created: 2020/01/26 10:19:28 by vrayinch          #+#    #+#             */
+/*   Updated: 2020/01/26 11:02:30 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(char const *s)
+int	ft_strequ(const char *s1, const char *s2)
 {
-	if (s)
-	{
-		while (*s != '\0')
-		{
-			write(1, &*s, 1);
-			s++;
-		}
-		write(1, "\n", 1);
-	}
+	if (!s1 || !s2)
+		return (0);
+	if (ft_strcmp(s1, s2) != 0)
+		return (0);
+	else
+		return (1);
 }

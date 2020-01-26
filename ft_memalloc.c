@@ -1,26 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_memalloc.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/13 11:55:44 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/26 09:59:35 by vrayinch         ###   ########.fr       */
+/*   Created: 2020/01/26 09:18:39 by vrayinch          #+#    #+#             */
+/*   Updated: 2020/01/26 09:20:08 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putendl(char const *s)
+void	*ft_memalloc(size_t size)
 {
-	if (s)
-	{
-		while (*s != '\0')
-		{
-			write(1, &*s, 1);
-			s++;
-		}
-		write(1, "\n", 1);
-	}
+	unsigned char	*ptr;
+	size_t			i;
+
+	i = 0;
+	if (!(ptr = (unsigned char *)malloc(size)))
+		return (NULL);
+	while (i < size)
+		ptr[i++] = 0;
+	return (ptr);
 }

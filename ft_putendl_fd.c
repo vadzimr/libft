@@ -6,7 +6,7 @@
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/25 20:43:43 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/25 20:44:28 by vrayinch         ###   ########.fr       */
+/*   Updated: 2020/01/26 09:59:46 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 void	ft_putendl_fd(char const *s, int fd)
 {
-	while (*s != '\0')
+	if (s)
 	{
-		write(fd, &*s, 1);
-		s++;
+		while (*s != '\0')
+		{
+			write(fd, &*s, 1);
+			s++;
+		}
+		write(fd, "\n", 1);
 	}
-	write(fd, "\n", 1);
 }
