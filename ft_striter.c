@@ -1,37 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_striter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/26 11:13:23 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/26 11:43:37 by vrayinch         ###   ########.fr       */
+/*   Created: 2020/01/26 20:49:12 by vrayinch          #+#    #+#             */
+/*   Updated: 2020/01/26 20:56:47 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	ft_striter(char *s, void (*f)(char *))
 {
-	int		i;
-	char	*s_join;
-
-	if (!s1 || !s2)
-		return (NULL);
-	i = 0;
-	if (!(s_join = ft_strnew(ft_strlen(s1) + ft_strlen(s2))))
-		return (NULL);
-	while (s1[i])
+	if (s && f)
 	{
-		s_join[i] = s1[i];
-		i++;
+		while (*s)
+		{
+			f(s);
+			++s;
+		}
 	}
-	while (*s2)
-	{
-		s_join[i] = *s2;
-		i++;
-		s2++;
-	}
-	return (s_join);
 }

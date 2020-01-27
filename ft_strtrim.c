@@ -1,37 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/26 11:13:23 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/26 11:43:37 by vrayinch         ###   ########.fr       */
+/*   Created: 2020/01/26 19:37:19 by vrayinch          #+#    #+#             */
+/*   Updated: 2020/01/26 20:45:27 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+char	*ft_strtrim(char const *s)
 {
-	int		i;
-	char	*s_join;
+	size_t	i;
+	size_t	j;
+	char	*str;
 
-	if (!s1 || !s2)
-		return (NULL);
 	i = 0;
-	if (!(s_join = ft_strnew(ft_strlen(s1) + ft_strlen(s2))))
+	if (!s)
 		return (NULL);
-	while (s1[i])
-	{
-		s_join[i] = s1[i];
+	while (s[i] && (s[i] == '\n' || s[i] == '\t' || s[i] == ' '))
 		i++;
-	}
-	while (*s2)
+	j = (ft_strlen(s) - 1);
+	if (s[i])
 	{
-		s_join[i] = *s2;
-		i++;
-		s2++;
+		while (s[j] == '\n' || s[j] == '\t' || s[j] == ' ')
+			j--;
 	}
-	return (s_join);
+	if (!(str = ft_strnew((j - i) + 1)))
+		return (NULL);
+	ft_strncpy(str, (s + i), ((j - i) + 1));
+	return (str);
 }
