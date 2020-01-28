@@ -6,7 +6,7 @@
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/18 16:17:33 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/24 11:10:18 by vrayinch         ###   ########.fr       */
+/*   Updated: 2020/01/27 14:15:58 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ char	*ft_strdup(const char *s1)
 	size_t	i;
 
 	i = 0;
-	res = (char *)malloc((strlen(s1) + 1) * sizeof(char));
+	res = (char *)malloc((ft_strlen(s1) + 1) * sizeof(char));
 	if (res == NULL)
 		return (NULL);
 	while (s1[i])

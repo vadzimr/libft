@@ -6,7 +6,7 @@
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/24 14:23:32 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/24 15:50:05 by vrayinch         ###   ########.fr       */
+/*   Updated: 2020/01/27 14:16:06 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,5 +26,5 @@ size_t		ft_strlcpy(char *dst, const char *src, size_t size)
 	}
 	if (size)
 		dst[i] = '\0';
-	return (strlen(src));
+	return (ft_strlen(src));
 }

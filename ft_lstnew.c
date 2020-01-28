@@ -1,28 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/26 20:58:03 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/27 07:32:23 by vrayinch         ###   ########.fr       */
+/*   Created: 2020/01/27 15:07:15 by vrayinch          #+#    #+#             */
+/*   Updated: 2020/01/27 16:21:38 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	unsigned int i;
+	t_list *list;
 
-	i = 0;
-	if (s && f)
+	list = (t_list*)malloc(sizeof(t_list));
+	if (list != NULL)
 	{
-		while (s[i])
+		list->next = NULL;
+		if (content == NULL)
 		{
-			f(i, &s[i]);
-			i++;
+			list->content_size = 0;
+			list->content = NULL;
+			return (list);
 		}
+		else
+			list->content_size = content_size;
+		list->content = malloc(content_size);
+		ft_memmove(list->content, content, content_size);
+		return (list);
 	}
+	return (NULL);
 }

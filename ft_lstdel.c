@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/26 20:58:03 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/27 07:32:23 by vrayinch         ###   ########.fr       */
+/*   Created: 2020/01/27 15:21:25 by vrayinch          #+#    #+#             */
+/*   Updated: 2020/01/27 16:21:34 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	unsigned int i;
+	t_list *temp;
 
-	i = 0;
-	if (s && f)
+	while (*alst)
 	{
-		while (s[i])
-		{
-			f(i, &s[i]);
-			i++;
-		}
+		temp = (*alst)->next;
+		ft_lstdelone(alst, del);
+		*alst = temp;
 	}
 }

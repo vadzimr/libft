@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/26 20:58:03 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/27 07:32:23 by vrayinch         ###   ########.fr       */
+/*   Created: 2020/01/27 15:23:08 by vrayinch          #+#    #+#             */
+/*   Updated: 2020/01/27 16:21:36 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 {
-	unsigned int i;
+	t_list *res;
 
-	i = 0;
-	if (s && f)
+	if (lst != NULL)
 	{
-		while (s[i])
+		res = (t_list*)malloc(sizeof(t_list));
+		if (res != NULL)
 		{
-			f(i, &s[i]);
-			i++;
+			res = f(lst);
+			res->next = ft_lstmap(lst->next, f);
+			return (res);
 		}
+		return (NULL);
 	}
+	return (NULL);
 }

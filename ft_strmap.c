@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_strmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: vrayinch <vrayinch@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/26 20:58:03 by vrayinch          #+#    #+#             */
-/*   Updated: 2020/01/27 07:32:23 by vrayinch         ###   ########.fr       */
+/*   Created: 2020/01/27 09:34:40 by vrayinch          #+#    #+#             */
+/*   Updated: 2020/01/27 10:07:18 by vrayinch         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+char	*ft_strmap(char const *s, char (*f)(char))
 {
-	unsigned int i;
+	char	*str;
+	int		i;
 
-	i = 0;
 	if (s && f)
 	{
+		if (!(str = ft_strnew(ft_strlen(s))))
+			return (NULL);
+		i = 0;
 		while (s[i])
 		{
-			f(i, &s[i]);
+			str[i] = f(s[i]);
 			i++;
 		}
+		return (str);
 	}
+	return (NULL);
 }
